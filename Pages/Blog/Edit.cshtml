@@ -1,0 +1,44 @@
+@page
+@model EntityF.Pages_Blog.EditModel
+
+@{
+    ViewData["Title"] = "Chỉnh sửa";
+}
+
+<h1>Chỉnh sửa bài viết theo ý bạn</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Article.ID" />
+            <div class="form-group">
+                <label asp-for="Article.Title" class="control-label"></label>
+                <input asp-for="Article.Title" class="form-control" />
+                <span asp-validation-for="Article.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Article.CreateTime" class="control-label"></label>
+                <input asp-for="Article.CreateTime" class="form-control" />
+                <span asp-validation-for="Article.CreateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Article.Content" class="control-label"></label>
+                <textarea asp-for="Article.Content" class="form-control"></textarea>
+                <span asp-validation-for="Article.Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Lưu lại" class="btn btn-primary m-2"  />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-secondary" asp-page="./Index">Quay lại danh sách</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

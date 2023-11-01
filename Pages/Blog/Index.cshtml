@@ -1,0 +1,62 @@
+@page "/Danh-sach"
+@model EntityF.Pages_Blog.IndexModel
+
+@{
+    ViewData["Title"] = "Danh sách các bài viết";
+    int i = 1;
+
+        var datapaging = new {
+        currentPage = Model.currentPage,    // trang hiện tại
+        countPages  = Model.countPages  // tổng  số trang 
+    };
+}
+
+<h1>Danh sách bài đăng</h1>
+
+<p>
+    <a class="btn btn-success" asp-page="Create">Tạo mới bài viết</a>
+</p>
+<form method="get" asp-page="./Index">
+    <p>
+        <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Tìm">
+    </p>
+</form>
+<partial name="_Paging" model="@datapaging" />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Stt</th>
+            <th>
+                @Html.DisplayNameFor(model => model.Article[0].Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Article[0].CreateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Article[0].Content)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Article) {
+        <tr>
+            <td>
+                @(i++)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateTime)
+            </td>
+            <td>
+                <a class="btn btn-success"  asp-page="./Edit" asp-route-id="@item.ID">Chỉnh sửa</a> 
+                <a class="btn btn-success" asp-page="./Details" asp-route-id="@item.ID">Chi tiết</a> 
+                <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@item.ID">Xóa</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
