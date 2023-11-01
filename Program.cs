@@ -6,10 +6,13 @@ using Microsoft.EntityFrameworkCore;
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddOptions();
+
 builder.Services.AddDbContext<AppDbContext>( options => {
     options.UseSqlServer(builder.Configuration.GetConnectionString("AppDbContext"));
 });
+
+builder.Services.AddRazorPages();
 
 
 WebApplication app = builder.Build();
@@ -27,6 +30,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
