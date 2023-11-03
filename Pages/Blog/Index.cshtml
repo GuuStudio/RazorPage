@@ -3,7 +3,6 @@
 
 @{
     ViewData["Title"] = "Danh sách các bài viết";
-    int i = 1;
 
         var datapaging = new {
         currentPage = Model.currentPage,    // trang hiện tại
@@ -43,7 +42,7 @@
 @foreach (var item in Model.Article) {
         <tr>
             <td>
-                @(i++)
+                @(item.ID)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)

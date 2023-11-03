@@ -534,3 +534,8 @@ C:\Users\LENOVO\OneDrive\Desktop\NET7\RazorPage\obj\Debug\net7.0\refint\EntityF.
 C:\Users\LENOVO\OneDrive\Desktop\NET7\RazorPage\obj\Debug\net7.0\EntityF.pdb
 C:\Users\LENOVO\OneDrive\Desktop\NET7\RazorPage\obj\Debug\net7.0\EntityF.genruntimeconfig.cache
 C:\Users\LENOVO\OneDrive\Desktop\NET7\RazorPage\obj\Debug\net7.0\ref\EntityF.dll
+C:\Users\LENOVO\OneDrive\Desktop\NET7\RazorPage\bin\Debug\net7.0\BouncyCastle.Cryptography.dll
+C:\Users\LENOVO\OneDrive\Desktop\NET7\RazorPage\bin\Debug\net7.0\MailKit.dll
+C:\Users\LENOVO\OneDrive\Desktop\NET7\RazorPage\bin\Debug\net7.0\MimeKit.dll
+C:\Users\LENOVO\OneDrive\Desktop\NET7\RazorPage\bin\Debug\net7.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\LENOVO\OneDrive\Desktop\NET7\RazorPage\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Security.Cryptography.Pkcs.dll

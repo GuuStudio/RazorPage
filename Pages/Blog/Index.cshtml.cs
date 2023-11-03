@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Album.Data;
 using Album.Model;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EntityF.Pages_Blog
 {
+
+    [Authorize]
     public class IndexModel : PageModel
     {
 
